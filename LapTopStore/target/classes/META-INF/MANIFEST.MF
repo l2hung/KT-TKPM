@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: CYBER
+Build-Jdk: 21.0.4
+Implementation-Title: laptop-shop
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.namchantran
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/laptop-shop
+Created-By: Maven Integration for Eclipse
+
