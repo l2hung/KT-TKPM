@@ -17,6 +17,8 @@
 		<!----start-Footder---->
 	<jsp:include page="include/homeFooter.jsp"></jsp:include>
 	<!----End-Footder---->
+		<button class="btn btn-success" formaction="vnpay_payment">Thanh toán bằng VNPAY</button>
+
 	</body>
 </html>
 
