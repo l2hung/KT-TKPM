@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -22,6 +23,9 @@
 
 <script
 	src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+
 <script>
 		    // You can also use "$(window).load(function() {"
 			    $(function () {
@@ -32,10 +36,12 @@
 			        speed: 600
 			      });
 			});
+		   
 		  </script>
 
 </head>
 <body>
+
 
 	<div class="wrap">
 		<!----start-Header---->
@@ -95,7 +101,7 @@
 				<ul>
 					<li><a href="<%=request.getContextPath()%>/">Trang chủ</a></li>
 
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cửa hàng <span class="caret"></span></a>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sản phẩm<span class="caret"></span></a>
 						<ul class="dropdown-menu" style="background: rgb(128, 128, 255);;" id="danhmuc">
 						</ul></li>
 					<li><a href="<%=request.getContextPath()%>/shipping">Miễn
