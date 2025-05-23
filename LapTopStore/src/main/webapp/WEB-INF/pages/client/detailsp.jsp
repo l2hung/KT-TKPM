@@ -4,20 +4,13 @@
 <head>
 	<title>Chi tiết sản phẩm</title>
 	</head>
-
-	
 	<body>
-		
 		<!----start-Header---->
 	 <jsp:include page="include/homeHeader.jsp"></jsp:include>
-		<!----End-Header---->
-		 
+		<!----End-Header----> 
 	<jsp:include page="include/detailspContent.jsp"></jsp:include>
-		   
 		<!----start-Footder---->
 	<jsp:include page="include/homeFooter.jsp"></jsp:include>
 	<!----End-Footder---->
 	</body>
-	
-	
 </html>
