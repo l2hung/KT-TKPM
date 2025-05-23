@@ -6,8 +6,7 @@
 	<script type="text/javascript">	  
 	$(document).ready(function() { 
 	  	var priceConvert = accounting.formatMoney(${sp.getDonGia()})+' VND';
-		document.getElementById("priceConvert").innerHTML= priceConvert;
-		  
+		document.getElementById("priceConvert").innerHTML= priceConvert;		  
 	  });
 	</script>
 <body>
@@ -57,5 +56,4 @@
 		</div>
 	</div>
 </body>
-
 <script src="<c:url value='/js/client/detailspAjax.js'/>" ></script>	 
