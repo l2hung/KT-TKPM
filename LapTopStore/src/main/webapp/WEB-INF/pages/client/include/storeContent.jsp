@@ -196,14 +196,10 @@
 			document.getElementById('reset-btn').addEventListener('click', function() {
 				const form = this.form;
 				if (form) {
-					// Reset tất cả select về giá trị rỗng
 					const selects = form.querySelectorAll('select');
 					selects.forEach(select => {
 						select.value = '';
 					});
-					// Không reset input hidden để giữ điều kiện hiển thị
-					// form.submit();
-					// Gửi lại form
 					form.submit();
 				}
 			});
