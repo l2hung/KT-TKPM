@@ -1,55 +1,26 @@
 pipeline {
     agent any
 
-    environment {
-        DB_PASSWORD = credentials('db-password')       // Thay bằng ID credential trong Jenkins của bạn
-        MAIL_PASSWORD = credentials('mail-password')   // Thay bằng ID credential trong Jenkins của bạn
-    }
-
-    tools {
-        maven 'Maven 3.8.8'    // Tên Maven tool đã khai báo trong Jenkins
-        jdk 'JDK17'            // Tên JDK tool đã khai báo trong Jenkins
-    }
-
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git branch: 'Hùng', url: 'https://github.com/l2hung/KT-TKPM.git'
             }
         }
-
-        stage('Build & Test') {
+        stage('Build') {
             steps {
-                sh 'mvn clean install -DskipTests=false'
+                sh 'mvn clean package' // hoặc ./mvnw clean package nếu có maven wrapper
             }
         }
-
-        stage('Package') {
+        stage('Test') {
             steps {
-                sh 'mvn package -DskipTests=true'
+                sh 'mvn test'
             }
         }
-
         stage('Deploy') {
-            when {
-                branch 'main'
-            }
             steps {
-                echo "Deploying branch ${env.BRANCH_NAME}..."
-
-                // Ví dụ lệnh deploy, bạn chỉnh lại cho phù hợp
-                // sh 'scp target/laptop-shop-0.0.1-SNAPSHOT.jar user@yourserver:/app/laptopshop.jar'
-                // hoặc chạy script deploy
+                echo 'Thêm bước deploy của bạn ở đây nếu có'
             }
-        }
-    }
-
-    post {
-        success {
-            echo "✅ Build & Test thành công trên nhánh ${env.BRANCH_NAME}"
-        }
-        failure {
-            echo "❌ Build hoặc Test thất bại trên nhánh ${env.BRANCH_NAME}"
         }
     }
 }
