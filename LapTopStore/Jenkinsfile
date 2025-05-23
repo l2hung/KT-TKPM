@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+
+    environment {
+        DB_PASSWORD = credentials('db-password')       // Thay bằng ID credential trong Jenkins của bạn
+        MAIL_PASSWORD = credentials('mail-password')   // Thay bằng ID credential trong Jenkins của bạn
+    }
+
+    tools {
+        maven 'Maven 3.8.8'    // Tên Maven tool đã khai báo trong Jenkins
+        jdk 'JDK17'            // Tên JDK tool đã khai báo trong Jenkins
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build & Test') {
+            steps {
+                sh 'mvn clean install -DskipTests=false'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                sh 'mvn package -DskipTests=true'
+            }
+        }
+
+        stage('Deploy') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo "Deploying branch ${env.BRANCH_NAME}..."
+
+                // Ví dụ lệnh deploy, bạn chỉnh lại cho phù hợp
+                // sh 'scp target/laptop-shop-0.0.1-SNAPSHOT.jar user@yourserver:/app/laptopshop.jar'
+                // hoặc chạy script deploy
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "✅ Build & Test thành công trên nhánh ${env.BRANCH_NAME}"
+        }
+        failure {
+            echo "❌ Build hoặc Test thất bại trên nhánh ${env.BRANCH_NAME}"
+        }
+    }
+}
