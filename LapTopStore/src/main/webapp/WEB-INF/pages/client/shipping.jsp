@@ -14,7 +14,7 @@
            <jsp:include page="include/homeFooter.jsp"></jsp:include>
 
     </body>
-</html>
+</html> 
 
 
 		
