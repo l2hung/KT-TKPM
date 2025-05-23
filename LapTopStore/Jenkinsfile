@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'Hùng', url: 'https://github.com/l2hung/KT-TKPM.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean package' // hoặc ./mvnw clean package nếu có maven wrapper
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Thêm bước deploy của bạn ở đây nếu có'
+            }
+        }
+    }
+}
