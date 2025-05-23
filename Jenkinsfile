@@ -1,13 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        // Biến môi trường nếu cần, ví dụ config DB hoặc mail (cẩn thận bảo mật)
-        // DB_URL = 'jdbc:mysql://localhost:3300/laptop_store'
-        // DB_USER = 'root'
-        // DB_PASS = '123456'
-    }
-
     stages {
         stage('Checkout') {
             steps {
