@@ -120,4 +120,3 @@
 <script src="<c:url value='/js/client/checkoutAjax.js'/>" ></script>	
 </body>
 </html>
-
