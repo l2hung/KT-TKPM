@@ -17,19 +17,28 @@ pipeline {
 
         stage('Build') {
             steps {
-                // Clean và build jar, chạy test
-                sh './mvnw clean package -DskipTests=false'
-                // Nếu dùng máy Windows, đổi lệnh trên thành: bat 'mvnw.cmd clean package -DskipTests=false'
+                script {
+                    if (isUnix()) {
+                        sh './mvnw clean package -DskipTests=false'
+                    } else {
+                        bat 'mvnw.cmd clean package -DskipTests=false'
+                    }
+                }
             }
         }
 
         stage('Test') {
             steps {
-                sh './mvnw test'
+                script {
+                    if (isUnix()) {
+                        sh './mvnw test'
+                    } else {
+                        bat 'mvnw.cmd test'
+                    }
+                }
             }
         }
 
-        // Ví dụ deploy hoặc các bước khác
         /*
         stage('Deploy') {
             steps {
