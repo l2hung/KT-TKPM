@@ -11,19 +11,6 @@
 	<br>
 	    <p style="font-size: 30px">Liên hệ với chúng tôi</p>
 	    <hr>
-<!-- 		<form>		
-			<label>Địa chỉ emai của bạn:</label> <br>
-			<p id="emailWarning" style="color: red"></p>
-			<input id="email" type="text">
-			<br>
-			<label>Nội dung liên hệ:</label> <br>
-			<p id="contentWarning" style="color: red"></p>
-			<textarea id="content" rows="4" cols="50"></textarea>
-			<br>	
-		</form>
-		<button >Gửi yêu cầu</button> -->
-		
-		
 		<form>
 			<div class="form-group">
 				<label for="email">Địa chỉ email của bạn:</label> 
